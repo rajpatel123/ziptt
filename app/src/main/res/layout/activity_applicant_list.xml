@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/dp_10"
+                        android:src="@mipmap/ic_back"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/ivBack"
+                        android:orientation="vertical">
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Verify EKYC"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/ts_20"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/ll_outer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="@dimen/dp_5"
+                android:background="@android:color/white"
+                android:layout_weight="1">
+                <com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout
+                    android:id="@+id/swipeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_applicant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"/>
+                </com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_verify_option"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#66000000"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@drawable/layout_background_top_round_corner_button"
+                android:orientation="horizontal">
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_otp_verified"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/phone_otp"
+                    android:padding="@dimen/dp_24"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_16"
+                    android:textColor="#de393939"
+                    android:text="Verify By \n OTP"/>
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_700"/>
+
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_bio_verified"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dp_24"
+                    android:gravity="center"
+                    android:drawableTop="@mipmap/thumb_print"
+                    android:textSize="@dimen/ts_16"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:layout_height="wrap_content"
+                    android:textColor="#de393939"
+                    android:text="Verify By\nBiometric"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

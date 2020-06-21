@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/activity_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/action_bar" layout="@layout/action_bar" />
+
+        <TableLayout
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="3"
+            android:padding="@dimen/dp_10"
+            android:stretchColumns="*">
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="60"
+                    android:text="@string/feature"
+                    android:id="@+id/feature"
+                    android:textStyle="bold"
+                    android:padding="3dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="20"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:id="@+id/value"
+                    android:text="@string/value"
+                    android:padding="3dip"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="20"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="@string/score"
+                    android:id="@+id/score"
+                    android:padding="3dip"
+                    android:gravity="end"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgound_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/fl_repayment_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@color/cardview_light_background"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:orientation="vertical">
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EMI Date"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/ts_12" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_14"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overdue"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/ts_12" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_overdue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_14"
+                    android:text=""/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:orientation="vertical">
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EMI Amount"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/ts_12" />
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_emi_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ts_14"
+                    android:text=""/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_trigger_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/dialog_bg_stroke"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

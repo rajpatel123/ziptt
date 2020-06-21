@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:background="@color/white"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+            android:layout_margin="@dimen/dp_20"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/close_img"
+                android:padding="@dimen/dp_15"
+                android:layout_gravity="center_vertical|end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/larsseit_medium"
+                android:gravity="center_vertical"
+                android:text="@string/edit_address"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dp_30"
+                android:textSize="@dimen/ts_14" />
+
+            <EditText
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColorHint="@color/transparent_half"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/ts_14"
+                android:background="@drawable/outlined_edittext"
+                android:hint="@string/edit_address_hint"
+                android:padding="@dimen/dp_20"
+                android:layout_width="match_parent"
+                android:id="@+id/address"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:imeOptions="actionDone" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/larsseit_medium"
+                android:text="@string/person_met_empty"
+                android:visibility="gone"
+                android:id="@+id/layout_mobile_invalid"
+                android:textColor="@color/f61c00"
+                android:textSize="@dimen/ts_14" />
+
+            <Button
+                android:id="@+id/submit_edit_address"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:theme="@style/btn_orange_style"
+                android:textColor="@color/white"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/btn_flat_orange"
+                android:text="@string/submit"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        android:descendantFocusability="beforeDescendants"
+        android:padding="@dimen/dp_10"
+        android:orientation="vertical">
+        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/ts_14"
+            android:text="1. What is the term rate?"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:textColor="@color/text_color_black" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:spinnerMode="dropdown"
+            android:visibility="gone"
+            android:id="@+id/answer_spinner"
+            android:layout_height="wrap_content"/>
+
+        <com.ziploan.team.MultiSelectSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:visibility="gone"
+            android:id="@+id/multi_select_spinner"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_answer"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_14"
+                android:padding="@dimen/dp_10"
+                android:textSize="@dimen/ts_14"
+                android:textColor="@color/text_color_black"
+                android:hint="Answer"
+                android:gravity="left|top"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_sub_answer"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_14"
+                android:padding="@dimen/dp_10"
+                android:textSize="@dimen/ts_14"
+                android:textColor="@color/text_color_black"
+                android:gravity="left|top"
+                />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/close"
+        android:layout_gravity="right|top"/>
+    </FrameLayout>
+</layout>

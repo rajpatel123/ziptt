@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/backgound_gray"
+            android:orientation="vertical">
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/lableAdditionalInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="Additional Information"
+                android:visibility="gone"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_18" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewAdditionalInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                custom:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_10">
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:background="@color/backgound_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_10">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_person_met"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Person met"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Designation in office"
+                            android:textColor="@color/text_color_black"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:descendantFocusability="beforeDescendants"
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/designationspinner"
+                            android:layout_height="wrap_content"/>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+
+                            android:id="@+id/designation_layout"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/text_designation_in_office"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Other designation in office"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="@string/email"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:visibility="gone"
+                            android:id="@+id/share_holder_spinner"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select Business Category"
+                                android:textColor="@color/text_color_black"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:textSize="@dimen/ts_14" />
+                            <com.ziploan.team.verification_module.customviews.CustomSpinnerRobotoR
+                                android:id="@+id/spinner_bc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                                android:inputType="textPersonName"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_10"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </LinearLayout>
+
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Nature of work"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/nature_of_work"
+                            android:layout_height="wrap_content"/>
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_nature_of_work"
+                                android:visibility="gone"
+                                tools:visibility="visible"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="@string/nature_of_work_detail"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:padding="@dimen/ts_14">
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Business Place separate from Residence"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_16" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:id="@+id/tv_place_separate_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/ts_14"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.ziploan.team.verification_module.customviews.checkbox.CustomCheckboxRobotoM
+                                    android:id="@+id/cb_left"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/left_selector"
+                                    android:button="@null"
+                                    android:checked="true"
+                                    android:gravity="center"
+                                    android:text="YES"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="@dimen/ts_14" />
+
+                                <com.ziploan.team.verification_module.customviews.checkbox.CustomCheckboxRobotoM
+                                    android:id="@+id/cb_right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/right_selector"
+                                    android:button="@null"
+                                    android:checked="false"
+                                    android:gravity="center"
+                                    android:text="NO"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/ts_14" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:text="Number of employees on site"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/employeed_on_site_spinner"
+                            android:layout_height="wrap_content"/>
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:text="Select No.of machines"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/number_of_machines"
+                            android:layout_height="wrap_content"/>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_assets_machinary_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Fixed Asset Machinery Value"
+                                android:inputType="numberDecimal"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:text="Select raw material amount"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/raw_material"
+                            android:layout_height="wrap_content"/>
+
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Stock/Inventory Amount"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/stock_amount"
+                            android:layout_height="wrap_content"/>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:text="Select Business investment amount"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/business_investment"
+                            android:layout_height="wrap_content"/>
+
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Business Stability at current premise?"
+                                android:textColor="@color/text_color_black"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/spinner_bisniess_stability"
+                            android:layout_height="wrap_content"/>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/reason_changing_place"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="@string/change_place"
+                                android:inputType="text"
+                                android:visibility="gone"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/landmark"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Landmark"
+                                android:inputType="text"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Is business address same as dashboard?"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textColor="@color/text_color_black"
+
+                            android:textStyle="bold"
+                            android:id="@+id/dashboard_business_address_txt"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/business_dashboard_spinner"
+                            android:layout_height="wrap_content"/>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:visibility="gone"
+                                android:id="@+id/business_as_dashboard"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Current Business Address"
+                                android:inputType="textPostalAddress"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="The locality of the Business place can be defined as?"
+                            android:textColor="@color/text_color_black"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/spinner_locality"
+                            android:layout_height="wrap_content"/>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Educational qualification of person who is holding business?"
+                            android:textColor="@color/text_color_black"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/spinner_education"
+                            android:layout_height="wrap_content"/>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Sign board observed"
+                            android:layout_marginStart="@dimen/dp_4"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_14" />
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="match_parent"
+                            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                            android:spinnerMode="dropdown"
+                            android:id="@+id/sign_board"
+                            android:layout_height="wrap_content"/>
+
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.ziploan.team.verification_module.customviews.CustomSpinnerRobotoR
+                                android:id="@+id/spinner_app_not_installed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:layout_centerVertical="true"
+                                android:inputType="textPersonName"
+                                android:lines="1"
+                                android:layout_toLeftOf="@+id/img_app_install_status_refresh"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_10"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+
+                            <ImageView
+                                android:layout_centerVertical="true"
+                                android:id="@+id/img_app_install_status_refresh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/ic_refresh_black_24dp"
+                                android:tint="@color/text_color_green" />
+                        </RelativeLayout>
+
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:id="@+id/refrencesHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_16"
+                            android:text="References"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_18" />
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:id="@+id/label_references"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_16"
+                            android:text="Business References"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_18" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardViewReferences"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_10"
+                            custom:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_references"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                </LinearLayout>
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                    android:id="@+id/tv_add_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:padding="@dimen/dp_10"
+                                    android:text="ADD MORE"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:id="@+id/label_referencesbb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_16"
+                            android:text="Family References"
+                            android:textColor="@color/text_color_black"
+                            android:textSize="@dimen/ts_18" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/cardViewReferencesFamily"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_10"
+                            custom:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_referencesFamily"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                </LinearLayout>
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                    android:id="@+id/tv_add_moreFamily"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:padding="@dimen/dp_10"
+                                    android:text="ADD MORE"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_designation_in_office"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Designation in office"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_actual_no_of_employee"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Actual no of employee"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_employee_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="No.of Employees on Site"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLength="6"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_no_of_machines"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="No.of machines"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_businees_investment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Business investment amount"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_rent_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Rent amount"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_sign_observed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Sign board observed (yes/no)"
+                                android:lines="1"
+                                android:maxLength="3"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_raw_material_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Raw material amount"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_inventory_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:hint="Stock/Inventory Amount"
+                                android:inputType="numberDecimal"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:padding="@dimen/dp_14"
+                                android:singleLine="true"
+                                android:textColor="@color/text_color_black"
+                                android:textSize="@dimen/ts_14" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/labelBusinessPlacePhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="Business Place Photos"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_18" />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewBusinessPlacePhotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                custom:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tv_view_file"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20"
+                        android:text="VIEW BUSINESS PLACE DOCUMENT"
+                        android:textColor="@color/text_color_blue"
+                        android:textSize="@dimen/ts_16"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_business_photos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/tv_view_file_long_shot_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="Business Place Long Shot Photos"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_18" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewBusinessPlacePhotosLongShot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                custom:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tv_view_file_long_shot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20"
+                        android:text="VIEW BUSINESS PLACE LONG SHOT DOCUMENT"
+                        android:textColor="@color/text_color_blue"
+                        android:textSize="@dimen/ts_16"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_business_photos_long_shot"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/tv_view_file_id_proof_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:text="ID Proofs"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_18" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewBusinessIdProof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                custom:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tv_view_file_id_proof"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20"
+                        android:text="VIEW ID Proof"
+                        android:textColor="@color/text_color_blue"
+                        android:textSize="@dimen/ts_16"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_id_proof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_20" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoM
+                android:id="@+id/tv_continue"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_20"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background_selector_orange"
+                android:gravity="center"
+                android:padding="@dimen/dp_14"
+                android:text="CONTINUE"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

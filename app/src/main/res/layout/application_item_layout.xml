@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.ziploan.team.collection.model.app_list.Result"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:cardUseCompatPadding="true"
+        custom:cardElevation="@dimen/dp_5"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_application_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{model.loanApplicationNumber}"
+                    style="@style/heading_style"/>
+
+                <TextView
+                    android:id="@+id/dpd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.deliquencyBucket}"
+                    android:fontFamily="@font/effra"
+                    android:layout_gravity="end|center_vertical"
+                    android:textColor="@color/color_212121"
+                    android:textSize="@dimen/ts_12"/>
+
+            </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawableStart="@drawable/ic_action_store"
+                android:text="@{model.businessName}"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/dp_4"
+                android:fontFamily="@font/effra"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/ts_11"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@{model.applicantName}"
+                android:textColor="@color/color_212121"
+                android:fontFamily="@font/effra_medium"
+                android:textSize="@dimen/ts_13"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.ziploan.team.collection.utils.LinkTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/collection_mobile"
+                    android:text="@{model.mobileNumber}"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:fontFamily="@font/effra"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/ts_12"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/collection_location"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="@{model.cityState}"
+                    android:textColor="@color/color_424242"
+                    android:fontFamily="@font/effra"
+                    android:textSize="@dimen/ts_12"/>
+            </LinearLayout>
+
+            <View
+                android:alpha=".25"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height=".5dp"
+                android:background="@color/colour_707070"/>
+<LinearLayout
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:text="@{model.showLastVistDate()}"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/effra"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/ts_11"/>
+    <!--android:text="@{model.lastVisit}"-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="@{model.showLoanAmount()}"
+        android:textColor="@color/red"
+        android:fontFamily="@font/effra_medium"
+        android:textSize="@dimen/ts_13"/>
+    <!--android:text="@{model.overdueAmount}"-->
+</LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

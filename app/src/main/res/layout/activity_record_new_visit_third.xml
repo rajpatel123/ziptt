@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/activity_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/action_bar" layout="@layout/action_bar" />
+        <com.ziploan.team.verification_module.customviews.VerticalScrollview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    android:layout_marginLeft="@dimen/card_view_padding"
+                    android:layout_marginTop="@dimen/card_view_padding"
+                    android:layout_marginBottom="@dimen/card_view_padding"
+                    android:layout_marginRight="@dimen/card_view_padding"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:background="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_10">
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Availability on Business Premise*" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_business_premise_availability"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_availability_yes"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/rb_availability_no"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NO" />
+                        </RadioGroup>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Business Operational at Business Premise*" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_business_operational"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_operational_yes"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/rb_operational_no"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NO" />
+                        </RadioGroup>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sign Board Observed*" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_sign_board_observed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_signboard_yes"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/rb_signboard_no"
+                                style="@style/radioButtonCommon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NO" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:layout_marginLeft="@dimen/card_view_padding"
+                    android:layout_marginBottom="@dimen/card_view_padding"
+                    android:layout_marginRight="@dimen/card_view_padding"
+                    android:background="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_10">
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/ts_14"
+                            android:padding="@dimen/dp_10"
+                            android:text="ADD Business Place Photos"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_10"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:id="@+id/ll_camera"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/backgroung_solid_button_accent"
+                                android:gravity="center"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:padding="@dimen/dp_10"
+                                android:orientation="horizontal">
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="CAMERA"
+                                    android:drawableLeft="@mipmap/camera"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:textColor="@android:color/white"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_gallery"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/backgroung_solid_button_blue"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:gravity="center"
+                                android:padding="@dimen/dp_10"
+                                android:orientation="horizontal">
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="GALLERY"
+                                    android:drawableLeft="@mipmap/gallery"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:textColor="@android:color/white"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_photos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_20" />
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer Feedback/Comments" />
+                        <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                            android:id="@+id/et_feedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/dp_80"
+                            android:gravity="left|top"
+                            android:nestedScrollingEnabled="true"
+                            android:hint="Write here"
+                            style="@style/edittextAreaCommon"/>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reason for not downloading/uninstalling ZipLoan App"
+                            android:layout_marginTop="@dimen/dp_20"/>
+                        <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                            android:id="@+id/et_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left|top"
+                            android:hint="Write here"
+                            android:minHeight="@dimen/dp_80"
+                            style="@style/edittextAreaCommon"/>
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            style="@style/editTextLabelCommon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:text="Asset Manager's Feedback/Comments*" />
+                        <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                            android:id="@+id/et_asset_manager_feedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/dp_80"
+                            android:gravity="left|top"
+                            android:hint="Write here"
+                            style="@style/edittextAreaCommon"/>
+                        <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                            android:id="@+id/button_save"
+                            android:layout_width="200dp"
+                            style="@style/buttonCommon"
+                            android:layout_height="wrap_content"
+                            android:text="SAVE"/>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+        </com.ziploan.team.verification_module.customviews.VerticalScrollview>
+    </LinearLayout>
+</layout>

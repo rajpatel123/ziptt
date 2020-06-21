@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@color/ff4500"
+                app:cardCornerRadius="0dp"
+                android:padding="@dimen/dp_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:alpha=".70"
+                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/ts_12"
+                    android:hint="@string/search_hint"
+                    android:padding="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:id="@+id/search"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_action_search"
+                    android:inputType="textFilter"
+                    android:imeOptions="actionSearch"
+                    android:background="@color/f61c00" />
+            </FrameLayout>
+        <include android:visibility="gone" layout="@layout/no_internet_layout" />
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+        <com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_application_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/no_application"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:text="@string/no_application"
+        style="@style/heading_style"/>
+</FrameLayout>
+    </LinearLayout>
+</layout>

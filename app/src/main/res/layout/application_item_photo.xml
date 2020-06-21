@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:paddingStart="@dimen/dp_10"
+       android:gravity="start">
+       <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+           android:id="@+id/nameOfApplicant"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="@dimen/dp_4"
+           android:text="Raj Patel"
+           android:singleLine="true"
+           android:maxLength="15"
+           android:ellipsize="end"
+           android:gravity="start"
+           android:textColor="@color/colorPrimary"
+           android:textSize="@dimen/ts_14" />
+
+       <FrameLayout
+           xmlns:tools="http://schemas.android.com/tools"
+           android:id="@+id/activity_splash"
+           android:layout_width="wrap_content"
+           android:layout_height="136dp"
+           android:padding="@dimen/dp_1"
+           android:background="@drawable/layout_background_round_corner_white_gray_stroke_button"
+           android:layout_marginTop="@dimen/dp_10"
+           android:orientation="vertical">
+
+
+
+           <ImageView
+               android:id="@+id/iv_photo"
+               android:layout_width="@dimen/dp_115"
+               android:visibility="gone"
+
+               android:maxWidth="100dp"
+               android:layout_gravity="center"
+               android:layout_height="@dimen/photo_tile_height1"
+               android:scaleType="fitXY"/>
+
+           <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+               android:id="@+id/uploadBtn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingBottom="@dimen/dp_8"
+               android:layout_margin="10dp"
+               android:paddingTop="@dimen/dp_8"
+               android:paddingStart="@dimen/ts_20"
+               android:layout_gravity="center"
+               android:paddingEnd="@dimen/ts_20"
+               android:text="Upload"
+               android:textColor="@color/colorPrimary"
+               android:background="@drawable/layout_background_round_corner"
+               android:textSize="@dimen/ts_14" />
+
+
+
+           <ProgressBar
+               android:id="@+id/pb_uploading"
+               android:layout_width="@dimen/dp_30"
+               android:layout_height="@dimen/dp_30"
+               android:visibility="gone"
+               android:layout_gravity="center"/>
+
+
+
+           <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+               android:id="@+id/reupload"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingBottom="@dimen/dp_2"
+               android:layout_margin="10dp"
+               android:paddingTop="@dimen/dp_2"
+               android:paddingStart="@dimen/ts_20"
+               android:layout_gravity="bottom"
+               android:paddingEnd="@dimen/ts_20"
+               android:text="Re-Upload"
+               android:visibility="gone"
+               android:textColor="@color/colorPrimary"
+               android:background="@drawable/layout_background_round_corner_reupload"
+               android:textSize="@dimen/ts_12" />
+               />
+       </FrameLayout>
+
+   </LinearLayout>
+</layout>

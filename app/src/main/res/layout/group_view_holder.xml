@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+        android:id="@+id/tv_trigger_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/ts_16"
+        android:elevation="@dimen/dp_3"
+        android:drawableRight="@mipmap/list_forword"
+        android:gravity="left|center"
+        android:padding="@dimen/dp_12"
+        android:textColor="@android:color/black" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_color"/>
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="reference"
+            type="com.ziploan.team.verification_module.borrowerdetails.BankInfoModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/dp_10"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/bank_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{reference.name}"
+                android:inputType="textPersonName"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:hint="Bank Name"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/current_emi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number"
+                android:text="@{reference.current_emi_amount}"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:hint="Current EMI amount"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/active_loan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{reference.no_of_active_loans}"
+                android:inputType="number"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:hint="@string/loan_amount"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</layout>

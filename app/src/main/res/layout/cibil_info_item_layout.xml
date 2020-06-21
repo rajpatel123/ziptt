@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout
+    android:layout_marginTop="@dimen/dp_20"
+    android:layout_marginBottom="@dimen/dp_20"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="1"
+    android:padding="@dimen/dp_10"
+    android:stretchColumns="1">
+    <TableRow>
+        <TextView
+            android:text="@string/account_type"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/loan_name"
+            android:padding="3dip"
+            android:gravity="end"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/type"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/loan_type"
+            android:padding="3dip"
+            android:gravity="end"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="@string/sanctionad_amound"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/sanctioned_amount"
+            android:padding="3dip"
+            android:gravity="end" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/current_amount"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/current_balance"
+            android:padding="3dip"
+            android:gravity="end"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/date_opened"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/date_opened"
+            android:padding="3dip"
+            android:gravity="end" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/date_reported"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/date_reported"
+            android:padding="3dip"
+            android:gravity="end" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="@string/emi"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/emi"
+            android:padding="3dip"
+            android:gravity="end" />
+    </TableRow>
+</TableLayout>
+</android.support.v7.widget.CardView>

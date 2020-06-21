@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "status_message": "Response generated",
+  "response": {
+    "esign_docs": [
+      {
+        "file_type": "nach",
+        "state": "write",
+        "section_name": "NACH",
+        "uploaded_files": []
+      },
+      {
+        "file_type": "stamp_paper",
+        "state": "read",
+        "section_name": "Stamp Paper",
+        "uploaded_files": [
+          "5e550a084df10c22ceebfc39"
+        ]
+      },
+      {
+        "file_type": "pdb_ack_chq_form",
+        "state": "write",
+        "section_name": "PDC Acknowledgment Letter/ Chq Submission Form",
+        "uploaded_files": []
+      },
+      {
+        "file_type": "letter_of_continuity",
+        "state": "write",
+        "section_name": "Letter of Continuity",
+        "uploaded_files": [
+          "5e550a084df10c22ceebfc39"
+        ]
+      },
+      {
+        "file_type": "spdc",
+        "state": "write",
+        "section_name": "SPDC",
+        "uploaded_files": []
+      },
+      {
+        "file_type": "demand_prominisory_note",
+        "state": "write",
+        "section_name": "Demand Prominisory Note",
+        "uploaded_files": []
+      }
+    ]
+  }
+}

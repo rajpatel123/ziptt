@@ -1,0 +1,144 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.ziploan.teamapp"
+        minSdkVersion 17
+        targetSdkVersion 28
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        multiDexEnabled true
+    }
+    signingConfigs {
+        myconfig {
+            keyAlias 'ziploan'
+            keyPassword 'ziploan@Android'
+            storeFile file('/home/raj/ziploan_workspace/team-app/ziploanteamapp.jks')
+            storePassword 'ziploan@Android'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+        release {
+            signingConfig signingConfigs.myconfig
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Specifies two flavor dimensions.
+    flavorDimensions "flavor"
+
+    productFlavors {
+        prod {
+            applicationId "com.ziploan.team"
+            buildConfigField 'String', 'BASE_URL', "\"https://webservices.ziploan.in/restapis/\""
+            buildConfigField 'String', 'BASE_URL_LS', "\"https://webservices-ls.ziploan.in/\""
+            buildConfigField 'String', 'IMAGE_BASE_URL', "\"https://webservices.ziploan.in/media/\""
+            buildConfigField 'String', 'ENVIRONMENT', "\"prod\""
+            versionName "1.0"
+            versionCode 28
+        }
+
+//        prod {
+//            applicationId "com.ziploan.team"
+//            buildConfigField 'String', 'BASE_URL', "\"https://processing-apis.ziploan.com/\""
+//            buildConfigField 'String', 'BASE_URL_LS', "\"https://sourcing-apis.ziploan.com/\""
+//            buildConfigField 'String', 'IMAGE_BASE_URL', "\"https://processing-apis.ziploan.com/media/\""
+//            buildConfigField 'String', 'ENVIRONMENT', "\"prod\""
+//            versionName "1.0"
+//            versionCode 26
+//        }
+        uat {
+            applicationId "com.ziploan.team"
+            buildConfigField 'String', 'BASE_URL', "\"https://webservices-uat.ziploan.in/restapis/\""
+            buildConfigField 'String', 'BASE_URL_LS', "\"https://webservices-uat.ziploan.in/loansourcing/\""
+            buildConfigField 'String', 'IMAGE_BASE_URL', "\"https://webservices-uat.ziploan.in/restapis/media/\""
+            buildConfigField 'String', 'ENVIRONMENT', "\"uat\""
+            versionName "1.2.2"
+            versionCode 26
+        }
+
+        qa {
+            applicationId "com.ziploan.team"
+            buildConfigField 'String', 'BASE_URL', "\"https://webservices-qa.ziploan.in/restapis/\""
+            buildConfigField 'String', 'BASE_URL_LS', "\"https://webservices-qa.ziploan.in/loansourcing/\""
+            buildConfigField 'String', 'IMAGE_BASE_URL', "\"https://webservices-qa.ziploan.in/media/\""
+            buildConfigField 'String', 'ENVIRONMENT', "\"qa\""
+            versionName "1.2.2"
+            versionCode 26
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.itextpdf:itextg:5.5.9'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.android.gms:play-services-gcm:10.0.0'
+    implementation 'com.google.android.gms:play-services-location:10.0.0'
+    implementation 'com.google.android.gms:play-services-auth:10.0.0'
+    implementation 'com.evernote:android-job:1.2.4'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.3'
+    // implementation files('lib/MorphoSmart_SDK_6.13.3.0-5.1.jar')
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation project(":library")
+
+
+}
+
+//verification@ziploan.in
+//zip@1234
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/dp_14"
+        android:background="@color/borrower_detail_tab_selected"
+        android:padding="@dimen/dp_10"
+        android:text="Site Info"/>
+
+    <ImageView
+        android:id="@+id/tab_image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-1dp"
+        android:background="@color/borrower_detail_tab_selected"
+        android:src="@mipmap/arrow_unselected"/>
+
+</LinearLayout>

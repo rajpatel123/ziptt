@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="model"
+            type="com.ziploan.team.collection.model.app_list.Result"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background">
+            <android.support.v7.widget.CardView
+                android:layout_margin="@dimen/dp_16"
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                custom:cardUseCompatPadding="true"
+                custom:cardElevation="0dp"
+                android:background="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_15">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_application_no"
+                            style="@style/heading_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@{model.loanApplicationNumber}" />
+
+                        <TextView
+                            android:id="@+id/dpd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:fontFamily="@font/effra"
+                            android:text="@{model.deliquencyBucket}"
+                            android:textColor="@color/color_212121"
+                            android:textSize="@dimen/ts_12" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:drawableStart="@drawable/ic_action_store"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@{model.businessName}"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:fontFamily="@font/effra_medium"
+                        android:text="@{model.applicantName}"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@{model.showLastVistDate()}"
+                        android:textColor="@color/color_ff6317"
+                        android:textSize="@dimen/ts_12" />
+                    <!--android:text="@{model.lastVisit}"-->
+                    <FrameLayout
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.ziploan.team.collection.utils.LinkTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableStart="@drawable/collection_mobile"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:fontFamily="@font/effra"
+                            android:gravity="center_vertical"
+                            android:text="@{model.mobileNumber}"
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/ts_13" />
+
+                        <ImageView
+                            android:id="@+id/edit_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:background="@drawable/circle_background"
+                            android:src="@drawable/edit" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height=".5dp"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:alpha=".25"
+                        android:background="@color/colour_707070" />
+
+                    <TextView
+                        android:id="@+id/reference_number_text"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableStart="@drawable/collection_mobile"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:fontFamily="@font/larsseit_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/reference_numbers"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_width="match_parent"
+                        android:scrollbars="vertical"
+                        android:id="@+id/reference_recycler"
+                        android:layout_height="wrap_content"/>
+
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height=".5dp"-->
+                        <!--android:layout_marginTop="@dimen/dp_20"-->
+                        <!--android:alpha=".25"-->
+                        <!--android:background="@color/colour_707070" />-->
+
+                    <FrameLayout
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableStart="@drawable/collection_location"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:fontFamily="@font/larsseit_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/business_addess"
+                            android:textColor="@color/color_212121"
+                            android:textSize="@dimen/ts_13"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/edit_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:background="@drawable/circle_background"
+                            android:src="@drawable/edit" />
+                    </FrameLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:fontFamily="@font/effra"
+                        android:text="@{model.businessAddress}"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_13" />
+                <FrameLayout
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <View
+                        android:alpha="0"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/white"/>
+
+                    <Button
+                        android:id="@+id/office_map"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/googlemap"
+                        android:fontFamily="@font/effra_medium"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="@string/get_direction"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_424242"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="@drawable/ractangle_background"/>
+                </FrameLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height=".5dp"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:alpha=".25"
+                        android:background="@color/colour_707070" />
+
+                    <FrameLayout
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableStart="@drawable/collection_location"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:fontFamily="@font/larsseit_medium"
+                            android:gravity="center_vertical"
+                            android:text="@string/resident_addess"
+                            android:textColor="@color/color_212121"
+                            android:textSize="@dimen/ts_13"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/edit_res_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|end"
+                            android:background="@drawable/circle_background"
+                            android:src="@drawable/edit" />
+                    </FrameLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:fontFamily="@font/effra"
+                        android:text="@{model.residenceAddress}"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_13" />
+
+                    <FrameLayout
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <View
+                            android:alpha="0"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/white"/>
+
+                        <Button
+                            android:id="@+id/resident_map"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/googlemap"
+                            android:fontFamily="@font/effra_medium"
+                            android:drawablePadding="@dimen/dp_5"
+                            android:gravity="center"
+                            android:text="@string/get_direction"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_424242"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/ractangle_background"/>
+                    </FrameLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height=".5dp"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:alpha=".25"
+                        android:background="@color/colour_707070" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/co_applicant_text"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:fontFamily="@font/larsseit_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/co_applicant_text"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_width="match_parent"
+                        android:scrollbars="vertical"
+                        android:id="@+id/co_applicant_recycler"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:drawableStart="@drawable/money1"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:fontFamily="@font/larsseit_medium"
+                        android:gravity="center_vertical"
+                        android:text="@string/loan_details_text"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/effra"
+                            android:gravity="center_vertical"
+                            android:text="@string/loan_amount_text"
+                            android:textColor="@color/color_424242"
+                            android:textSize="@dimen/ts_11" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra_medium"
+                                android:gravity="center_vertical"
+                                android:text="@{model.showActualLoanAmount()}"
+                                android:textColor="@color/color_212121"
+                                android:textSize="@dimen/ts_13" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra"
+                                android:gravity="center_vertical"
+                                android:text="@string/emi_amount_text"
+                                android:textColor="@color/color_424242"
+                                android:textSize="@dimen/ts_11" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra_medium"
+                                android:gravity="center_vertical"
+                                android:text="@{model.showemiAmount()}"
+                                android:textColor="@color/color_212121"
+                                android:textSize="@dimen/ts_13" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra"
+                                android:gravity="center_vertical"
+                                android:text="@string/principle_outstanding"
+                                android:textColor="@color/color_424242"
+                                android:textSize="@dimen/ts_11" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra_medium"
+                                android:gravity="center_vertical"
+                                android:text="@{model.showPortfolioAmount()}"
+                                android:textColor="@color/color_212121"
+                                android:textSize="@dimen/ts_13" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra"
+                                android:gravity="center_vertical"
+                                android:text="@string/forecloser_text"
+                                android:textColor="@color/color_424242"
+                                android:textSize="@dimen/ts_11" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/effra_medium"
+                                android:gravity="center_vertical"
+                                android:text="@{model.showForeclosureAmount()}"
+                                android:textColor="@color/color_212121"
+                                android:textSize="@dimen/ts_13" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@{model.showLoanAmount()}"
+                            android:textColor="@color/red"
+                            android:fontFamily="@font/effra_medium"
+                            android:textSize="@dimen/ts_13"/>
+
+                        <Button
+                            android:visibility="@{model.breakupButtonisibility ? View.VISIBLE : View.GONE}"
+                            android:id="@+id/overdue_breakup"
+                            android:layout_weight="1"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/effra_medium"
+                            android:gravity="center"
+                            android:text="@string/view_breakup"
+                            android:textAllCaps="false"
+                            android:textColor="@color/color_424242"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/ractangle_background"/>
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height=".5dp"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:alpha=".25"
+                        android:background="@color/colour_707070" />
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/past_visit"
+                            android:layout_marginEnd="@dimen/dp_5"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/effra_bold"
+                            android:text="@string/past_visit"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_11"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/normal_button_background_style"/>
+
+                        <Button
+                            android:id="@+id/record_new_visit"
+                            android:layout_marginStart="@dimen/dp_5"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/effra_bold"
+                            android:text="@string/record_visit"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_11"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/normal_button_background_style"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/view_kyc"
+                            android:layout_marginEnd="@dimen/dp_5"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/effra_bold"
+                            android:text="@string/view_kyc"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_11"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/normal_button_background_style"/>
+
+                        <Button
+                            android:id="@+id/view_soa"
+                            android:layout_marginStart="@dimen/dp_5"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/effra_bold"
+                            android:text="@string/view_soa"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/ts_11"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/normal_button_background_style"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

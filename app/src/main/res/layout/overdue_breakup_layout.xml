@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:pp="http://schemas.android.com/tools">
+    <data>
+        <variable name="index" type="int"/>
+        <import type="java.util.List"/>
+        <variable name="model" type="List&lt;com.ziploan.team.collection.model.app_list.OverdueBreakup&gt;"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.CardView
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:cardUseCompatPadding="true"
+        custom:cardElevation="@dimen/dp_5"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_application_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/overdue_text"
+                style="@style/heading_style"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:layout_width="match_parent"
+                android:background="@drawable/spinner_border"
+                android:id="@+id/emi_spinner"
+                android:layout_marginTop="@dimen/dp_20"
+                android:spinnerMode="dialog"
+                android:theme="@style/AppTheme.PopupOverlay"
+                android:textSize="?attr/actionBarSize"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dp_20"
+                android:drawableStart="@drawable/money1"
+                android:drawablePadding="@dimen/dp_4"
+                android:fontFamily="@font/larsseit_medium"
+                android:gravity="center_vertical"
+                android:text="@{model[index].breakupEmiText}"
+                android:textColor="@color/color_212121"
+                android:textSize="@dimen/ts_13"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/principle_amount"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:id="@+id/principle_amount"
+                        android:text="@{model[index].showPrincipalCharges()}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/interest_amount"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:text="@{model[index].showInterestAmount()}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/amount_pending"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:text="@{model[index].showtotalEmi()}"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/overdue_amount_text"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:text="@{model[index].showOverdueCharges()}"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/penal_charges"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:text="@{model[index].showPenelCharges()}"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:text="@string/bouncing_charges"
+                        android:textColor="@color/color_424242"
+                        android:textSize="@dimen/ts_11" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:text="@{model[index].showBouncingCharges()}"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_13" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/effra"
+                    android:gravity="center_vertical"
+                    android:text="@string/due_for_emi"
+                    android:textColor="@color/color_424242"
+                    android:textSize="@dimen/ts_11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@{model[index].dueDate}"
+                    android:fontFamily="@font/effra_medium"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/color_212121"
+                    android:textSize="@dimen/ts_13" />
+            </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:alpha=".25"
+                    android:background="@color/colour_707070" />
+
+            <TextView
+                android:id="@+id/overdue_breakup_text"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/red"
+                android:fontFamily="@font/effra_medium"
+                android:textSize="@dimen/ts_13"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+</layout>

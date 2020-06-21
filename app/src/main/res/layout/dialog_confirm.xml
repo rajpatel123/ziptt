@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/alert_dialog_padding"
+    android:paddingRight="@dimen/alert_dialog_padding"
+    android:background="#00000000">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical">
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/tv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Please enable location."
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/ts_16" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_700"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/alert_dialog_button_height"
+            android:orientation="horizontal">
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                android:id="@+id/tv_yes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_8"
+                android:gravity="center"
+                android:text="Yes"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/ts_18" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/gray_700"
+                />
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                android:id="@+id/tv_no"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/dp_8"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/ts_18" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="borrower"
+            type="com.ziploan.team.verification_module.borrowerslist.BorrowersUnverified" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_borrower_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgound_gray_2"
+        android:orientation="vertical"
+        tools:context=".verification_module.borrowerdetails.BorrowerDetailActivity">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/borrower_detail_tab_unselected">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/dp_10"
+                        android:src="@mipmap/ic_back" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/ivBack"
+                        android:orientation="vertical">
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:id="@+id/tvTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="@{borrower.loan_application_number}"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/ts_18" />
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                            android:id="@+id/tvTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="@{borrower.first_name+' '+borrower.last_name}"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/ts_12" />
+                    </LinearLayout>
+
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/verify_ekyc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/layout_background_round_corner_orange_white_stroke_button"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_10"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:text="EKYC"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/tabsBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/borrower_detail_tab_unselected"
+                android:orientation="horizontal">
+
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_site_info"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/borrower_detail_tab_unselected"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:text="Site Info"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:id="@+id/tab_image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:src="@mipmap/arrow_unselected" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_question"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:text="Questionnaire"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:id="@+id/tab_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:src="@mipmap/arrow_unselected" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/credit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:text="@string/credit_header"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:id="@+id/tab_image3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:scaleType="fitXY"
+
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:src="@mipmap/arrow_unselected" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_documents"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="false"
+                    android:text="@string/esign_docs"
+                    android:textSize="@dimen/dp_14" />
+
+                <ImageView
+                    android:id="@+id/tab_image4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:scaleType="fitXY"
+
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:src="@mipmap/arrow_unselected" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:id="@+id/tv_fields"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/borrower_detail_tab_selected"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:singleLine="false"
+                    android:text="@string/esign_details"
+                    android:textSize="@dimen/dp_14" />
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoM
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@drawable/layout_background_round_corner_light_gray_button"
+                android:elevation="@dimen/dp_10"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_26"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_26"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="SUBMIT"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

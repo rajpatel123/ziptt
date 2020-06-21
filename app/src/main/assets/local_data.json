@@ -1,0 +1,69 @@
+{
+  "questionaries": [
+    "How long you have been running this business?",
+    "Why did you start this business?",
+    "How many employees do you have?",
+    "What is the total salary of your employees?",
+    "How much rent do you pay for this shop/office/factory?",
+    "How many clients/customers do you have?",
+    "Where these clients/customers are located?",
+    "Average Client Receipts?",
+    "How many suppliers do you have?",
+    "Where these suppliers are located?",
+    "Average Supplier Payment?",
+    "What is your average debtor cycle?",
+    "What is your average creditor cycle?",
+    "What is your family background?",
+    "What is your average margin?",
+    "What is your peak season time?",
+    "How many loans you are serving right now?",
+    "What is your current total EMI?",
+    "Why do you want loan?",
+    "Loan Requirement?",
+    "Residence Address and whether it is owned or rented?",
+    "Mobile no of atleast 2 business references",
+    "App downloand and Mail ID of customer?",
+    "Repayment from Account (No, Bank and Account type)?",
+    "GST Registration?",
+    "Annual Turnover?",
+    "General Insurance of Plant and Machinery/Equipment/Equipment/ Inventory and Stock?",
+    "Loan Purpose?",
+    "Do you have another office?"
+  ],
+  "entity_proof": [
+    "Select Entity Proof",
+    "VAT/CST Registration",
+    "Service Tax Registration",
+    "Shop & Establishment Registration",
+    "Excise License",
+    "Utility Bill in name of Firm/Company",
+    "PAN of Firm/Company",
+    "Acknowledged last ITR",
+    "Others - Please Specify"
+  ],
+  "business_place_address_proof": [
+    "Select Business Address Proof",
+    "Rent Agreement with electricity bill",
+    "VAT/CST Registration",
+    "Service Tax Registration",
+    "Shop & Establishment Registration",
+    "Excise License",
+    "Utility Bill in name of Firm/Company",
+    "Acknowledged last ITR",
+    "Bank Statement",
+    "Others - Please Specify"
+  ],
+  "residence_place_address_proof": [
+    "Select Residence Address Proof",
+    "Aadhar Card",
+    "Passport",
+    "Utility bill - Last 3 Months",
+    "Property Tax Bill - Last 3 Months",
+    "Others - Please Specify"
+  ],
+  "loan_type": [
+    "Select Loan Type",
+    "Personal Loan",
+    "Business Loan"
+  ]
+}

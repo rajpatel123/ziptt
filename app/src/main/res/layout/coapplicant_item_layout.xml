@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="model"
+            type="com.ziploan.team.collection.model.app_list.co_applicant.CoApplicantData"/>
+    </data>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/effra_medium"
+            android:text="@{model.name}"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/ts_13" />
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginEnd="@dimen/dp_40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/effra"
+                android:gravity="center_vertical"
+                android:text="@{model.address}"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/ts_13" />
+
+            <ImageView
+                android:id="@+id/edit_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:background="@drawable/circle_background"
+                android:src="@drawable/edit" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.ziploan.team.collection.utils.LinkTextView
+            android:layout_marginEnd="@dimen/dp_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/effra"
+            android:gravity="center_vertical"
+            android:text="@{model.mobile}"
+            android:textColor="@color/color_424242"
+            android:textSize="@dimen/ts_13" />
+        <ImageView
+            android:id="@+id/edit_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:background="@drawable/circle_background"
+            android:src="@drawable/edit" />
+    </FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:alpha=".25"
+            android:background="@color/colour_707070" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="model"
+            type="List&lt;com.ziploan.team.collection.model.past_vist.Response&gt;" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        layout="@layout/no_internet_layout"
+                        tools:visibility="gone"
+
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@color/white"
+                        android:visibility="gone"
+                        custom:cardElevation="@dimen/dp_5"
+                        custom:cardUseCompatPadding="true">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_10">
+
+                                <android.support.v7.widget.AppCompatSpinner
+                                    android:id="@+id/emi_spinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/spinner_border"
+                                    android:dropDownWidth="match_parent"
+                                    android:spinnerMode="dialog"
+                                    android:textSize="?attr/actionBarSize"
+                                    android:theme="@style/AppTheme.PopupOverlay" />
+
+                                <TextView
+                                    android:id="@+id/tv_application_no"
+                                    style="@style/heading_style"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:text="@string/past_vist" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:orientation="vertical"
+                                    android:visibility="@{model[index].wholeLayoutVisibility ? View.VISIBLE : View.GONE}">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/effra"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/person_met_text"
+                                        android:textColor="@color/color_424242"
+                                        android:textSize="@dimen/ts_11" />
+
+                                    <TextView
+                                        android:id="@+id/principle_amount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:fontFamily="@font/effra"
+                                        android:gravity="center_vertical"
+                                        android:text="@{model[index].personMet}"
+                                        android:textColor="@color/color_212121"
+                                        android:textSize="@dimen/ts_14" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height=".5dp"
+                                        android:layout_marginTop="@dimen/dp_20"
+                                        android:background="@color/colour_707070" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:visibility="@{model[index].amountLayoutVisibility ? View.VISIBLE : View.GONE}">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginTop="@dimen/dp_20"
+                                            android:fontFamily="@font/effra"
+                                            android:gravity="center_vertical"
+                                            android:text="@{model[index].amountCollected}"
+                                            android:textColor="@color/color_212121"
+                                            android:textSize="@dimen/ts_14" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginTop="@dimen/dp_10"
+                                            android:fontFamily="@font/effra"
+                                            android:gravity="center_vertical"
+                                            android:text="@{model[index].formattedBankName}"
+                                            android:textColor="@color/color_212121"
+                                            android:textSize="@dimen/ts_14"
+                                            android:visibility="@{model[index].bankNameLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginTop="@dimen/dp_10"
+                                            android:fontFamily="@font/effra"
+                                            android:gravity="center_vertical"
+                                            android:text="@{model[index].referenceNumber}"
+                                            android:textColor="@color/color_212121"
+                                            android:textSize="@dimen/ts_14"
+                                            android:visibility="@{model[index].referenceLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginTop="@dimen/dp_10"
+                                            android:fontFamily="@font/effra"
+                                            android:gravity="center_vertical"
+                                            android:text="@{model[index].inviceNumber}"
+                                            android:textColor="@color/color_212121"
+                                            android:textSize="@dimen/ts_14"
+                                            android:visibility="@{model[index].invoiceLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginTop="@dimen/dp_10"
+                                            android:fontFamily="@font/effra"
+                                            android:gravity="center_vertical"
+                                            android:text="@{model[index].amount}"
+                                            android:textColor="@color/color_212121"
+                                            android:textSize="@dimen/ts_14" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height=".5dp"
+                                            android:layout_marginTop="@dimen/dp_20"
+                                            android:background="@color/colour_707070" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/date_of_visit"
+                                    android:textColor="@color/color_424242"
+                                    android:textSize="@dimen/ts_11" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@{model[index].dateOfVisit}"
+                                    android:textColor="@color/color_ff6317"
+                                    android:textSize="@dimen/ts_14" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height=".5dp"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:background="@color/colour_707070" />
+
+                                <FrameLayout
+                                    android:id="@+id/location_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:fontFamily="@font/effra"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/past_visit_location"
+                                        android:textColor="@color/color_212121"
+                                        android:textSize="@dimen/ts_14" />
+
+                                    <Button
+                                        android:id="@+id/last_visit_map"
+                                        style="?android:attr/borderlessButtonStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical|end"
+                                        android:background="@drawable/ractangle_background"
+                                        android:drawableStart="@drawable/googlemap"
+                                        android:drawablePadding="@dimen/dp_5"
+                                        android:fontFamily="@font/effra_medium"
+                                        android:gravity="center"
+                                        android:text="@string/get_direction"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/color_424242" />
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/comments"
+                                    android:textColor="@color/color_424242"
+                                    android:textSize="@dimen/ts_11"
+                                    android:visibility="@{model[index].commentLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:layout_marginBottom="@dimen/dp_30"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@{model[index].comments}"
+                                    android:textColor="@color/color_212121"
+                                    android:textSize="@dimen/ts_14"
+                                    android:visibility="@{model[index].commentLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/mobile_hint"
+                                    android:textColor="@color/color_424242"
+                                    android:textSize="@dimen/ts_11"
+                                    android:visibility="@{model[index].mobileLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                    android:layout_marginBottom="@dimen/dp_30"
+                                    android:fontFamily="@font/effra"
+                                    android:gravity="center_vertical"
+                                    android:text="@{model[index].mobile}"
+                                    android:textColor="@color/color_212121"
+                                    android:textSize="@dimen/ts_14"
+                                    android:visibility="@{model[index].mobileLayoutVisibility ? View.VISIBLE : View.GONE}" />
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </ScrollView>
+        <TextView
+            android:id="@+id/no_past_visit"
+            style="@style/heading_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_past_vist"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

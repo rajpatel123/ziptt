@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <variable
+            name="assetManager"
+            type="com.ziploan.team.asset_module.super_user.ZipAssetManager"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:cardUseCompatPadding="true"
+        custom:cardElevation="@dimen/dp_1"
+        android:background="@android:color/transparent">
+    <LinearLayout
+        android:id="@+id/activity_splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_12"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/ts_16"
+                    android:text="@{assetManager.fetchAssetManagerName()}"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_5"
+                    android:layout_gravity="center_vertical|right"
+                    android:src="@mipmap/list_forword"/>
+            </FrameLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

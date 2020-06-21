@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="reference"
+            type="com.ziploan.team.verification_module.borrowerdetails.FamilyReferences"/>
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/dp_10"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{reference.name}"
+                android:inputType="textPersonName"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:hint="Name"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="number"
+                android:text="@{reference.mobile}"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:maxLength="10"
+                android:hint="Mobile"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:inputType="text"
+                android:text="@{reference.address}"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:maxLength="50"
+                android:hint="Address"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                android:id="@+id/et_relationship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_14"
+                android:singleLine="true"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{reference.relationship}"
+                android:inputType="textPersonName"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14"
+                android:hint="Relationship"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+</layout>

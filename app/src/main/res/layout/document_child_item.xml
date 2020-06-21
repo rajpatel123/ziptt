@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+        android:id="@+id/documentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_background_round_corner_gray_file"
+        android:paddingStart="@dimen/ts_15"
+        android:paddingEnd="@dimen/ts_36"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dp_5"
+        android:minWidth="140dp"
+        android:singleLine="true"
+        android:maxWidth="@dimen/dp_140"
+        android:ellipsize="end"
+        android:textColor="@color/common_google_signin_btn_text_light_default"
+        android:layout_margin="@dimen/dp_2"
+        android:paddingTop="@dimen/dp_5"
+        android:text="Pancard.jpg"/>
+
+    <ImageView
+        android:id="@+id/delete_photo"
+        android:layout_width="14dp"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_height="14dp"
+        app:srcCompat="@drawable/cross_dialog"
+        android:layout_gravity="end|center_vertical"
+        />
+
+</FrameLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="filterKey"
+            type="com.ziploan.team.verification_module.caching.FilterKey"/>
+    </data>
+    <FrameLayout
+        android:id="@+id/fl_item_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{filterKey.is_selected?@android:color/white:@color/colorAccent}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@{filterKey.is_selected?@android:color/white:@color/colorAccent}"
+            android:descendantFocusability="beforeDescendants"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_14">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_3"
+                android:src="@drawable/highlight_bullet"
+                android:layout_gravity="center_vertical"
+                android:visibility="@{filterKey.is_filter_selected?View.VISIBLE:View.INVISIBLE}"
+                android:textColor="@android:color/white" />
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@{ZiploanUtil.keyToText(filterKey.key_name)}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/ts_14" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

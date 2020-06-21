@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+
+                android:id="@+id/lenderNameHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:text="LENDER:" />
+
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                android:id="@+id/tv_lenderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:inputType="textCapCharacters|textCapWords"
+                android:layout_toEndOf="@+id/lenderNameHeading"
+                android:gravity="clip_vertical"
+                android:text="IDFC Bank Limited:"
+                android:textColor="@color/colorPrimary" />
+
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/documents"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:id="@+id/progressBar"/>
+            </RelativeLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

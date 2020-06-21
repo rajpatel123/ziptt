@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="loan"
+            type="com.ziploan.team.webapi.Loan"/>
+        <variable
+            name="changeRequest"
+            type="com.ziploan.team.asset_module.ChangeRequestPojo"/>
+        <variable
+            name="businessAddress"
+            type="com.ziploan.team.asset_module.change_request.BusinessAddressChangeRequest"/>
+        <variable
+            name="priAddress"
+            type="com.ziploan.team.asset_module.change_request.ResidenceAddressChangeRequest"/>
+        <variable
+            name="secAddress"
+            type="com.ziploan.team.asset_module.change_request.ResidenceAddressChangeRequest"/>
+        <variable
+            name="mobileDetails"
+            type="com.ziploan.team.asset_module.change_request.MobileChangeRequest"/>
+        <variable
+            name="bankDetails"
+            type="com.ziploan.team.asset_module.change_request.RepaymentBankChangeRequest"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/activity_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/action_bar" layout="@layout/action_bar" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/card_view_padding"
+                android:paddingRight="@dimen/card_view_padding"
+                android:paddingTop="@dimen/card_view_padding"
+                android:orientation="vertical">
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:id="@+id/business_address_cardview"
+                    android:visibility="visible"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:id="@+id/tv_business_address_change"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_change_request_tile"
+                                android:text="Business Address"
+                                android:textSize="@dimen/ts_14" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@{changeRequest.businessAddressArrow}"/>
+                        </FrameLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_business_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:visibility="@{changeRequest.businessAddress==1?View.VISIBLE:View.GONE}">
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/dark_gray"
+                                android:text="Old Business Address"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:text="@{loan.business_address}"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_14"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/dark_gray"
+                                android:text="New Business Address"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                style="@style/editTextLabelCommon"
+                                android:layout_width="wrap_content"
+                                android:text="New Address(Flat no, Street no, Locality)*" />
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_business_address"
+                                style="@style/editTextCommon"
+                                android:inputType="text"
+                                android:layout_width="match_parent"
+                                android:hint="" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="City*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_business_city"
+                                        style="@style/editTextCommon"
+                                        android:inputType="text"
+                                        android:nextFocusDown="@+id/et_busniness_state"
+                                        android:layout_width="match_parent"
+                                        android:hint="" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="State*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_busniness_state"
+                                        style="@style/editTextCommon"
+                                        android:inputType="text"
+                                        android:layout_width="match_parent"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="Landmark" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_business_landmark"
+                                        style="@style/editTextCommon"
+                                        android:inputType="text"
+                                        android:nextFocusDown="@+id/et_business_pincode"
+                                        android:layout_width="match_parent"
+                                        android:hint="" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="Pincode*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_business_pincode"
+                                        style="@style/editTextCommon"
+                                        android:inputType="number"
+                                        android:maxLength="6"
+                                        android:layout_width="match_parent"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                                    android:id="@+id/button_save_business"
+                                    style="@style/buttonCommon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:text="SAVE" />
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                    android:id="@+id/tv_attach_document_business"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_18"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:textSize="@dimen/ts_12"
+                                    android:drawableTop="@mipmap/attach"
+                                    android:text="Attach Documents" />
+
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/dp_10"
+                                    android:visibility="@{businessAddress.proof_url!=null?View.VISIBLE:View.GONE}"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tv_proof_business"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center"
+                                        android:textSize="@dimen/ts_12"
+                                        android:text="@{businessAddress.fetchPhotoFileName()}"
+                                        android:textColor="@color/text_color_green" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_delete_business_proof"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="@dimen/dp_2"
+                                        android:src="@mipmap/close" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/pr_address_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:visibility="visible"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:id="@+id/tv_pri_applicant_add_change"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:id="@+id/primery_txt"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/ts_14"
+                                android:text="Primary Applicant Residence Address"
+                                android:padding="@dimen/padding_change_request_tile"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@{changeRequest.priAddressArrow}"/>
+                        </FrameLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_pri_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="@{changeRequest.primaryAddress==1?View.VISIBLE:View.GONE}"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10">
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:id="@+id/old_primery_text"
+                                android:layout_height="wrap_content"
+                                android:text="Old Primary Residence Address"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:text="@{loan.residence_address}"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:layout_marginTop="@dimen/dp_14"
+                                android:textColor="@color/dark_gray"
+                                android:id="@+id/new_primery_text"
+                                android:text="New Primary Residence Address"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                style="@style/editTextLabelCommon"
+                                android:text="New Address(Flat no, Street no, Locality)*" />
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_pri_address"
+                                android:layout_width="match_parent"
+                                android:inputType="text"
+                                style="@style/editTextCommon"
+                                android:hint="" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="City*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_pri_city"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="State*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_pri_state"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="Landmark" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_pri_landmark"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="Pincode*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_pri_pincode"
+                                        android:layout_width="match_parent"
+                                        android:inputType="number"
+                                        android:maxLength="6"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_file_selected_pri"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                                    android:id="@+id/button_save_pri_address"
+                                    style="@style/buttonCommon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:text="SAVE" />
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                    android:id="@+id/tv_attach_document_pri"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_18"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:textSize="@dimen/ts_12"
+                                    android:drawableTop="@mipmap/attach"
+                                    android:text="Attach Documents" />
+
+
+                            </FrameLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_10"
+                                android:visibility="@{priAddress.proof_url!=null?View.VISIBLE:View.GONE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/tv_proof_pri"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{priAddress.fetchPhotoFileName()}"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/ts_12"
+                                    android:textColor="@color/text_color_green"/>
+                                <ImageView
+                                    android:id="@+id/iv_delete_pri_proof"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/close"
+                                    android:padding="@dimen/dp_2"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:id="@+id/sec_cardview"
+                    android:visibility="visible"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:id="@+id/tv_sec_applicant_add_change"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/ts_14"
+                                android:text="Secondary Applicant Residence Address"
+                                android:padding="@dimen/padding_change_request_tile"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@{changeRequest.secAddressArrow}"/>
+                        </FrameLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_sec_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="@{changeRequest.secondaryAddress==1?View.VISIBLE:View.GONE}"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10">
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Old Secondary Residence Address"
+                                android:textColor="@color/dark_gray"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:id="@+id/customTextViewRobotoR4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:text=""
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:layout_marginTop="@dimen/dp_14"
+                                android:text="New Secondary Residence Address"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                style="@style/editTextLabelCommon"
+                                android:text="New Address(Flat no, Street no, Locality)*" />
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_address"
+                                android:layout_width="match_parent"
+                                android:inputType="text"
+                                style="@style/editTextCommon"
+                                android:hint="" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="City*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_city"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="State*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_state"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="Landmark" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_landmark"
+                                        android:layout_width="match_parent"
+                                        android:inputType="text"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="Pincode*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_pincode"
+                                        android:layout_width="match_parent"
+                                        android:inputType="number"
+                                        android:maxLength="6"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                                    android:id="@+id/button_save_sec_applicant_add"
+                                    android:layout_width="90dp"
+                                    style="@style/buttonCommon"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:text="SAVE"/>
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                    android:id="@+id/tv_attach_document_sec"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:layout_marginTop="@dimen/dp_18"
+                                    android:textSize="@dimen/ts_12"
+                                    android:drawableTop="@mipmap/attach"
+                                    android:text="Attach Documents" />
+
+                            </FrameLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_file_selected"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_10"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="@{secAddress.proof_url!=null?View.VISIBLE:View.GONE}"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/tv_proof_sec"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{secAddress.fetchPhotoFileName()}"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center"
+                                        android:textSize="@dimen/ts_12"
+                                        android:textColor="@color/text_color_green"/>
+                                    <ImageView
+                                        android:id="@+id/iv_delete_sec_proof"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@mipmap/close"
+                                        android:padding="@dimen/dp_2"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:visibility="visible"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:id="@+id/tv_mobile_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/mobile_txt"
+                                android:textSize="@dimen/ts_14"
+                                android:text="Customer Mobile Number"
+                                android:padding="@dimen/padding_change_request_tile"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@{changeRequest.mobileArrow}"/>
+                        </FrameLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_mobile_no_change"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="@{changeRequest.mobile==1?View.VISIBLE:View.GONE}"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Old Mobile No."
+                                android:textColor="@color/dark_gray"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:text="@{loan.mobile_number}"
+                                android:textSize="@dimen/ts_11" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="New Mobile No.*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_mobile"
+                                        android:layout_width="match_parent"
+                                        android:inputType="number"
+                                        android:maxLength="10"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        android:layout_width="wrap_content"
+                                        style="@style/editTextLabelCommon"
+                                        android:text="Confirm New Mobile No.*" />
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_confirm_mobile"
+                                        android:layout_width="match_parent"
+                                        android:inputType="number"
+                                        android:maxLength="10"
+                                        style="@style/editTextCommon"
+                                        android:hint="" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                                    android:id="@+id/button_save_mobile"
+                                    android:layout_width="90dp"
+                                    style="@style/buttonCommon"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:text="SAVE"/>
+
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                    android:id="@+id/tv_attach_document_mobile"
+                                    android:layout_width="wrap_content"
+                                    android:visibility="gone"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:layout_marginTop="@dimen/dp_18"
+                                    android:textSize="@dimen/ts_12"
+                                    android:drawableTop="@mipmap/attach"
+                                    android:text="Attach Documents" />
+
+                            </FrameLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_10"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="@{mobileDetails.proof_url!=null?View.VISIBLE:View.GONE}"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/tv_proof_mobile"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{mobileDetails.fetchPhotoFileName()}"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center"
+                                        android:textSize="@dimen/ts_12"
+                                        android:textColor="@color/text_color_green"/>
+                                    <ImageView
+                                        android:id="@+id/iv_delete_mobile_proof"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@mipmap/close"
+                                        android:padding="@dimen/dp_2"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/bank_account_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    custom:cardUseCompatPadding="true"
+                    custom:cardElevation="@dimen/card_elevation"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:id="@+id/tv_bank_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/padding_change_request_tile"
+                                android:text="Bank Account Details"
+                                android:textSize="@dimen/ts_14" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_10"
+                                android:layout_gravity="center_vertical|right"
+                                android:src="@{changeRequest.bankArrow}"/>
+                        </FrameLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_bank_change"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:visibility="@{changeRequest.bankDetails==1?View.VISIBLE:View.GONE}">
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_14"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:textColor="@color/dark_gray"
+                                android:text="New Bank Account Details"
+                                android:textSize="@dimen/ts_11" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                style="@style/editTextLabelCommon"
+                                android:layout_width="wrap_content"
+                                android:text="Bank Name*" />
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_bank_name"
+                                style="@style/editTextCommon"
+                                android:layout_width="match_parent"
+                                android:hint=""
+                                android:inputType="text" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                style="@style/editTextLabelCommon"
+                                android:layout_width="wrap_content"
+                                android:text="Bank Account Number*" />
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_bank_account_no"
+                                style="@style/editTextCommon"
+                                android:layout_width="match_parent"
+                                android:hint=""
+                                android:inputType="number" />
+
+                            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                style="@style/editTextLabelCommon"
+                                android:layout_width="wrap_content"
+                                android:text="Bank Account Holder Name*" />
+
+                            <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                android:id="@+id/et_bank_account_holder_name"
+                                style="@style/editTextCommon"
+                                android:layout_width="match_parent"
+                                android:hint=""
+                                android:inputType="text" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="Bank IFSC Code*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_ifsc_code"
+                                        style="@style/editTextCommon"
+                                        android:layout_width="match_parent"
+                                        android:hint=""
+                                        android:textAllCaps="true" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="Bank Branch*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_bank_branch"
+                                        style="@style/editTextCommon"
+                                        android:layout_width="match_parent"
+                                        android:hint=""
+                                        android:inputType="text" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="Account Type*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_account_type"
+                                        style="@style/editTextCommon"
+                                        android:layout_width="match_parent"
+                                        android:hint=""
+                                        android:inputType="text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                        style="@style/editTextLabelCommon"
+                                        android:layout_width="wrap_content"
+                                        android:text="City*" />
+
+                                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                                        android:id="@+id/et_bank_city"
+                                        style="@style/editTextCommon"
+                                        android:layout_width="match_parent"
+                                        android:hint=""
+                                        android:inputType="text" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                                    android:id="@+id/tv_attach_document_bank"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_18"
+                                    android:drawablePadding="@dimen/dp_5"
+                                    android:textSize="@dimen/ts_12"
+                                    android:drawableTop="@mipmap/attach"
+                                    android:text="Attach Documents" />
+                                <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                                    android:id="@+id/button_save_bank_detail"
+                                    style="@style/buttonCommon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:text="SAVE" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_10"
+                                android:visibility="@{bankDetails.proof_url!=null?View.VISIBLE:View.GONE}"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_proof_bank"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center"
+                                    android:textSize="@dimen/ts_12"
+                                    android:text="@{bankDetails.fetchPhotoFileName()}"
+                                    android:textColor="@color/text_color_green" />
+
+                                <ImageView
+                                    android:id="@+id/iv_delete_bank_proof"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/dp_2"
+                                    android:src="@mipmap/close" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

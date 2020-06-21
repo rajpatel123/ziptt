@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="fragment"
+            type="com.ziploan.team.verification_module.borrowerdetails.credit.CreditFragment"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_marginStart="@dimen/dp_10"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/text_color_black"
+        android:text="@string/primary_bank"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:shrinkColumns="1"
+        android:padding="@dimen/dp_10"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/bank_name" />
+
+            <TextView
+                android:id="@+id/bank_name"
+                android:padding="3dip"
+                android:gravity="end" />
+        </TableRow>
+
+        <TableRow >
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/account_holder_name" />
+
+            <TextView
+                android:id="@+id/holder_name"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_debit" />
+
+            <TextView
+                android:id="@+id/total_debit"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_credit" />
+
+            <TextView
+                android:id="@+id/total_credit"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_bounces" />
+
+            <TextView
+                android:id="@+id/total_bounce"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/cash_deposited" />
+
+            <TextView
+                android:id="@+id/total_cash_deposit"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/secondary_bank_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/text_color_black"
+        android:text="@string/secondary_bank"/>
+
+    <TableLayout
+        android:id="@+id/secondary_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:shrinkColumns="1"
+        android:stretchColumns="1"
+        android:padding="@dimen/dp_10"
+        android:visibility="gone">
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/bank_name" />
+
+            <TextView
+                android:id="@+id/sec_bank_name"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/account_holder_name" />
+
+            <TextView
+                android:id="@+id/sec_holder_name"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_debit" />
+
+            <TextView
+                android:id="@+id/sec_total_debit"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_credit" />
+
+            <TextView
+                android:id="@+id/sec_total_credit"
+                android:gravity="end"
+                android:padding="3dip"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/total_bounces" />
+
+            <TextView
+                android:id="@+id/sec_total_bounce"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="@string/cash_deposited" />
+
+            <TextView
+                android:id="@+id/sec_cash_deposite"
+                android:gravity="end"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/cbil_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textColor="@color/text_color_black"
+        android:text="@string/cibil_info"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cibil_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/sec_cbil_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="@string/sec_cibil_info"
+        android:textColor="@color/text_color_black"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/sec_cibil_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:scrollbars="vertical" />
+</LinearLayout>
+    </ScrollView>
+</layout>

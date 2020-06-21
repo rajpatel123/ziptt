@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/alert_dialog_padding"
+    android:paddingRight="@dimen/alert_dialog_padding"
+    android:background="#00000000"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_add_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/layout_background_circle_white_solid"
+            android:paddingLeft="@dimen/dp_24"
+            android:paddingRight="@dimen/dp_24"
+            android:paddingBottom="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_24"
+            android:src="@mipmap/savequestion" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_52"
+            android:background="@drawable/layout_background_round_corner_accent_solid_white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_background_round_corner_white_nostorke"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp">
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    style="@style/editTextLabelCommon"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:text="Your Question*" />
+
+                <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                    android:id="@+id/et_question"
+                    style="@style/editTextCommon"
+                    android:layout_width="match_parent"
+                    android:hint="Your question?"
+                    android:inputType="text" />
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                    style="@style/textViewSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/ts_10"
+                    android:padding="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:text="SAVE QUESTION" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"/>
+
+</LinearLayout>

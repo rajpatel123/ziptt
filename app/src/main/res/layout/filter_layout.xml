@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:layout_margin="@dimen/dp_20"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<ImageView
+    android:id="@+id/close"
+    android:layout_gravity="center_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/close"/>
+
+    <LinearLayout
+        android:layout_gravity="center_vertical|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/effra_bold"
+            android:gravity="center_vertical"
+            android:text="@string/reset"
+            android:textColor="@color/color_212121"
+            android:textSize="@dimen/ts_15" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/effra_bold"
+            android:text="@string/save"
+            android:textColor="@color/color_ff6317"
+            android:textSize="@dimen/ts_15"
+            android:layout_marginStart="@dimen/dp_30"/>
+    </LinearLayout>
+</FrameLayout>
+
+    <EditText
+        android:layout_marginTop="@dimen/dp_30"
+        android:textColorHint="@color/transparent_half"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/ts_14"
+        android:background="@drawable/outlined_edittext"
+        android:hint="@string/search"
+        android:padding="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:id="@+id/search"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/seacrhblack"
+        android:drawablePadding="@dimen/dp_10"
+        android:inputType="textFilter"
+        android:imeOptions="actionSearch" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/effra_bold"
+        android:gravity="center_vertical"
+        android:text="@string/bucket_text"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/ts_15" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp_20"
+        android:id="@+id/rv_dpd_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/effra_bold"
+        android:gravity="center_vertical"
+        android:text="@string/pincode"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/ts_15" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp_20"
+        android:id="@+id/rv_pincode_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+</layout>

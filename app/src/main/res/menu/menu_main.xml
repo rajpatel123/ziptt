@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@mipmap/filter"
+        android:title="@string/menu_filter"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/logout"
+        android:icon="@mipmap/power_button"
+        android:title="Logout"
+        app:showAsAction="always"></item>
+</menu>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+           android:id="@+id/docTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:text="Select No.of machines"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/ts_14" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/dp_2"
+            android:background="@color/dark_gray" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:minHeight="100dp"
+            android:orientation="horizontal">
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/uploadBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingStart="@dimen/ts_20"
+                android:paddingEnd="@dimen/ts_20"
+                android:text="Upload"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/layout_background_round_corner"
+                android:textSize="@dimen/ts_14" />
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/documentviewRV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_weight=".5" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

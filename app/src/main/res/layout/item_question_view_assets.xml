@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <variable
+            name="question"
+            type="com.ziploan.team.verification_module.borrowerdetails.ZiploanQuestion"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/dp_10"
+        android:descendantFocusability="beforeDescendants"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                style="@style/textViewTitle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Question : "/>
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/tv_val_question"
+                style="@style/textViewValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@{question.question}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                style="@style/textViewTitle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Answer : "/>
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                android:id="@+id/tv_val_answer"
+                style="@style/textViewValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@{question.answer}"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

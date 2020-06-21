@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <variable
+            name="question"
+            type="com.ziploan.team.verification_module.borrowerdetails.ZiploanQuestion"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:descendantFocusability="beforeDescendants"
+        android:orientation="vertical">
+        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            style="@style/editTextLabelCommon"
+            android:text="@{question.question}" />
+        <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+            android:id="@+id/et_answer"
+            android:layout_width="match_parent"
+            style="@style/editTextCommon"
+            android:inputType="text"
+            android:text="@{question.answer}"
+            android:hint="" />
+    </LinearLayout>
+</layout>

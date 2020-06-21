@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+
+                    android:id="@+id/lenderNameHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="LENDER:" />
+
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+
+                    android:id="@+id/tv_lenderName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toEndOf="@+id/lenderNameHeading"
+                    android:gravity="clip_vertical"
+                    android:text="IDFC Bank Limited:"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:text="DDE FORM" />
+
+            <LinearLayout
+                android:id="@+id/ddeForms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:orientation="vertical" />
+
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="INSURANCE FORM" />
+
+            <LinearLayout
+                android:id="@+id/insuranceForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:orientation="vertical" />
+
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="APPLICATION FORM" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:scrollbars="none"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/applicationForms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal" />
+
+            </HorizontalScrollView>
+
+
+            <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="DISBURSEMENT REQUEST FORM" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30">
+
+                <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                    android:id="@+id/et_micrcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:hint="MICR No"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/ts_14" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15">
+
+                <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                    android:id="@+id/et_ifsc_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:hint="RTGS / IFSC code"
+                    android:lines="1"
+                    android:maxLines="1"
+
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/ts_14" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

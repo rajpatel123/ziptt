@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<Button
+    android:id="@+id/item"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_20"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/effra"
+    android:textSize="@dimen/ts_14"
+    android:gravity="center"
+    android:textAllCaps="false"
+    android:textColor="@color/color_424242"
+    style="?android:attr/borderlessButtonStyle"
+    android:background="@drawable/ractangle_background"/>
+</layout>

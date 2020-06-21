@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/backgound_gray"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/ic_back"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_toRightOf="@+id/ivBack"
+                    android:orientation="vertical">
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Verify by OTP"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/ts_20"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            custom:cardUseCompatPadding="true"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:orientation="vertical">
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/ts_18"
+                    android:textColor="@color/text_color_black"
+                    android:text="Enter code sent to below number"/>
+                <!--<com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/ts_20"
+                    android:textColor="@color/text_color_black"
+                    android:text="9347820956"/>-->
+
+                    <EditText
+                        android:id="@+id/et_otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:maxLength="4"
+                        android:visibility="visible"
+                        android:background="@null"
+                        android:cursorVisible="false"
+                        android:textColor="@android:color/transparent"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.5"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/ts_50"
+                        android:maxLength="4"
+                        android:textColor="@color/gray_700"
+                        android:text="----"/>
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tv_resend_otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/ts_12"
+                        android:textColor="@color/colorPrimary"
+                        android:text="RESEND CODE"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoM
+            android:id="@+id/btn_verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/background_selector_orange"
+            android:text="VERIFY"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/ts_16"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <variable
+            name="assetManager"
+            type="com.ziploan.team.asset_module.super_user.ZipAssetManager"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/activity_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/action_bar" layout="@layout/action_bar" />
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/card_view_padding"
+            android:layout_marginRight="@dimen/card_view_padding"
+            android:layout_marginTop="@dimen/card_view_padding"
+            android:layout_marginBottom="@dimen/card_view_padding"
+            android:fillViewport="true">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:cardUseCompatPadding="true"
+                custom:cardElevation="@dimen/card_elevation"
+                android:background="@android:color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:layout_width="wrap_content"
+                        style="@style/textViewMedium"
+                        android:padding="@dimen/dp_10"
+                        android:text="@{ZiploanUtil.capitalize(assetManager.manager_name)}"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/textViewVerySmall"
+                            android:text="Visit Date"
+                            android:textColor="@color/text_color_gray"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            />
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/textViewVerySmall"
+                            android:gravity="center"
+                            android:textColor="@color/text_color_gray"
+                            android:text="First Visit Time"
+                            android:layout_height="wrap_content"
+                            />
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/textViewVerySmall"
+                            android:gravity="center"
+                            android:textColor="@color/text_color_gray"
+                            android:text="Last Visit Time"
+                            android:layout_height="wrap_content"
+                            />
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            style="@style/textViewVerySmall"
+                            android:gravity="center"
+                            android:text="Total Visits"
+                            android:textColor="@color/text_color_gray"
+                            android:layout_height="wrap_content"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_margin="@dimen/dp_10"
+                        android:background="@color/line_color"/>
+                    <com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout
+                        android:id="@+id/swipeLayout"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/transparent"
+                        android:layout_height="300dp">
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_manager_visits"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white" />
+
+                    </com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout>
+                    <ProgressBar
+                        android:id="@+id/load_more_progress"
+                        android:indeterminateOnly="true"
+                        android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+                        android:indeterminateDuration="10"
+                        android:indeterminateBehavior="repeat"
+                        android:progressBackgroundTint="@color/colorAccent"
+                        android:progressBackgroundTintMode="multiply"
+                        android:minHeight="24dip"
+                        android:maxHeight="24dip"
+                        android:layout_gravity="bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

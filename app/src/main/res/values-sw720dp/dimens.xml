@@ -1,0 +1,36 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">72dp</dimen>
+    <dimen name="activity_vertical_margin">72dp</dimen>
+    <dimen name="ts_16">24sp</dimen>
+    <dimen name="ts_20">29sp</dimen>
+    <dimen name="ts_22">30sp</dimen>
+    <dimen name="ts_14">21sp</dimen>
+    <dimen name="ts_12">18sp</dimen>
+    <dimen name="ts_10">12sp</dimen>
+    <dimen name="ts_18">25sp</dimen>
+    <dimen name="ts_24">34sp</dimen>
+    <dimen name="dp_24">34dp</dimen>
+    <dimen name="dp_22">32dp</dimen>
+    <dimen name="dp_20">29dp</dimen>
+    <dimen name="dp_18">26dp</dimen>
+    <dimen name="dp_16">24dp</dimen>
+    <dimen name="dp_14">21dp</dimen>
+    <dimen name="dp_12">18dp</dimen>
+    <dimen name="dp_10">14dp</dimen>
+    <dimen name="dp_8">12dp</dimen>
+    <dimen name="dp_6">10dp</dimen>
+    <dimen name="dp_5">9dp</dimen>
+    <dimen name="photo_tile_height">160dp</dimen>
+    <dimen name="dp_40">58dp</dimen>
+    <dimen name="ts_50">70sp</dimen>
+    <dimen name="dp_100">142dp</dimen>
+    <dimen name="dp_30">44dp</dimen>
+    <dimen name="dp_34">45dp</dimen>
+    <dimen name="dp_26">38dp</dimen>
+    <dimen name="padding_login_page_form">72dp</dimen>
+    <dimen name="alert_dialog_padding">72dp</dimen>
+    <dimen name="alert_dialog_button_height">64dp</dimen>
+    <dimen name="dp_115">115dp</dimen>
+
+</resources>

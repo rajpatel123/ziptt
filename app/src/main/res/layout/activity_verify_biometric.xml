@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@color/backgound_gray"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/ic_back"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_toRightOf="@+id/ivBack"
+                    android:orientation="vertical">
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Verify by Biometric"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/ts_20"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            custom:cardUseCompatPadding="true"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:background="@android:color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:orientation="vertical">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                        android:id="@+id/et_aadhaar_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:hint="Enter Applicant’s Aadhar Number"
+                        android:singleLine="true"
+                        android:maxLength="12"
+                        android:textColor="@color/text_color_black"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"/>
+                </android.support.design.widget.TextInputLayout>
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fingerprint Scan"
+                    android:textSize="@dimen/ts_18"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:textColor="@color/text_color_black"
+                    android:layout_gravity="center_horizontal"/>
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    android:id="@+id/tv_biometric_scan_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Put finger on sensor and wait a second for device to register prints"
+                    android:textSize="@dimen/ts_14"
+                    android:gravity="center"
+                    android:textColor="@color/text_color_gray"
+                    android:layout_gravity="center_horizontal"/>
+                <ImageView
+                    android:id="@+id/image_scan_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/thumb_print_unsel"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoM
+                android:id="@+id/btn_verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_selector_orange"
+                android:text="VERIFY"
+                android:paddingLeft="@dimen/dp_40"
+                android:paddingRight="@dimen/dp_40"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:layout_margin="@dimen/dp_10"
+                android:textSize="@dimen/ts_16"
+                android:textColor="@android:color/white" />
+            <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoM
+                android:id="@+id/btn_connect_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/background_selector_orange"
+                android:text="Device Verify"
+                android:paddingLeft="@dimen/dp_40"
+                android:paddingRight="@dimen/dp_40"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:enabled="true"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:layout_margin="@dimen/dp_10"
+                android:textSize="@dimen/ts_16"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

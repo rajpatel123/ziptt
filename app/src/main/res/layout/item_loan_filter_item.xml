@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <variable
+            name="filterItem"
+            type="com.ziploan.team.verification_module.caching.FilterItem"/>
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        android:descendantFocusability="beforeDescendants"
+        android:padding="@dimen/dp_8"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <com.ziploan.team.verification_module.customviews.checkbox.CustomCheckboxRobotoM
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/ts_14"
+            android:gravity="center_vertical"
+            android:checked="@{filterItem.selected?true:false}"
+            android:text="@{filterItem.filter_name}"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:textColor="@color/text_color_black" />
+
+    </LinearLayout>
+    </FrameLayout>
+</layout>

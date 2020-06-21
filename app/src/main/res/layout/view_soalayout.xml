@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:pp="http://schemas.android.com/tools">
+    <data>
+        <variable name="index" type="int"/>
+        <import type="java.util.List"/>
+        <!--<variable name="model" type="List&lt;com.ziploan.team.collection.model.emi.OverdueAmount&gt;"/>-->
+    </data>
+    <LinearLayout
+        android:background="@color/background"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.CardView
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:cardUseCompatPadding="true"
+            custom:cardElevation="@dimen/dp_5"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dp_10"
+                android:padding="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_application_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/soa_text"
+                    style="@style/heading_style"/>
+
+                <FrameLayout
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/aadhar_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_14" />
+
+                    <TextView
+                        android:text="@string/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/view_color"
+                        android:textSize="@dimen/ts_14" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:alpha=".25"
+                    android:background="@color/colour_707070" />
+
+                <FrameLayout
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/pan_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_14" />
+
+                    <TextView
+                        android:text="@string/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/view_color"
+                        android:textSize="@dimen/ts_14" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:alpha=".25"
+                    android:background="@color/colour_707070" />
+
+                <FrameLayout
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/loan_app_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_14" />
+
+                    <TextView
+                        android:text="@string/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/view_color"
+                        android:textSize="@dimen/ts_14" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:alpha=".25"
+                    android:background="@color/colour_707070" />
+
+                <FrameLayout
+                    android:layout_marginBottom="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="@string/utility_bill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/effra"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/color_212121"
+                        android:textSize="@dimen/ts_14" />
+
+                    <TextView
+                        android:text="@string/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:fontFamily="@font/effra_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/view_color"
+                        android:textSize="@dimen/ts_14" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>

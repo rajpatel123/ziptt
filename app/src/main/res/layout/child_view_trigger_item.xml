@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="ews"
+            type="com.ziploan.team.webapi.EWS"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgound_gray"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/dialog_bg_stroke"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoBold
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="@{ews.trigger_name}" />
+                    <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                        android:id="@+id/tv_trigger_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/ts_12"
+                        android:layout_gravity="right|center_vertical"
+                        android:textColor="@color/colorPrimary"
+                        android:drawableBottom="@drawable/bg_triangle"
+                        android:text="@{ews.trigger_time}" />
+
+                </FrameLayout>
+
+                <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoR
+                    android:id="@+id/tv_trigger_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@{ews.trigger_msg}"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

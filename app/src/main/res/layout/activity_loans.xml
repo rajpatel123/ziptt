@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ziploan.team.utils.ZiploanUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="actionBarData"
+            type="com.ziploan.team.asset_module.ActionBarData"/>
+        <variable
+            name="filterButton"
+            type="boolean"/>
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgound_gray">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:elevation="10dp">
+            <android.support.v7.widget.Toolbar
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                tools:showIn="@layout/activity_loans">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_drawer_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_10"
+                            android:visibility="@{actionBarData.imageResource==0?View.GONE:View.VISIBLE}"
+                            android:layout_gravity="left|center_vertical"
+                            android:src="@{actionBarData.imageResource}" />
+
+                        <com.ziploan.team.verification_module.customviews.textview.CustomTextViewRobotoM
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAllCaps="true"
+                            android:text="@{actionBarData.title}"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/ts_18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                            android:id="@+id/button_clear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CLEAR"
+                            android:textColor="@android:color/white"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:visibility="@{filterButton?View.VISIBLE:View.GONE}"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_gravity="left|center_vertical"
+                            android:textSize="@dimen/ts_14" />
+
+                        <com.ziploan.team.verification_module.customviews.button.CustomButtonRobotoBold
+                            android:id="@+id/button_apply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAllCaps="true"
+                            android:text="APPLY"
+                            android:visibility="@{filterButton?View.VISIBLE:View.GONE}"
+                            android:background="@android:color/white"
+                            android:textColor="@color/colorAccent"
+                            android:paddingLeft="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_10"
+                            android:paddingTop="@dimen/dp_5"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:textSize="@dimen/ts_14" />
+                    </LinearLayout>
+                </FrameLayout>
+            </android.support.v7.widget.Toolbar>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:orientation="vertical">
+                <com.ziploan.team.verification_module.customviews.edittext.CustomEditTextRobotoR
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:drawableLeft="@mipmap/asset_loan_search"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:elevation="2dp"
+                    android:hint="Search by business name/application Number"
+                    android:lines="1"
+                    android:textColorHint="@color/edit_text_stroke_color_common"
+                    android:maxLines="1"
+                    android:padding="@dimen/dp_10"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/ts_12" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/dp_10"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout
+                    android:id="@+id/swipeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_loans"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/dp_5"
+                        android:visibility="gone"
+                        android:background="@color/backgound_gray" />
+
+
+
+
+                </com.ziploan.team.verification_module.customviews.CustomSwipeRefreshLayout>
+
+                <TextView
+                    android:id="@+id/no_application"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/dp_15"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:text="@string/no_application"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
